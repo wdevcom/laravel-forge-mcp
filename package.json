@@ -1,0 +1,37 @@
+{
+  "name": "@wdevcom/laravel-forge-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing the full Laravel Forge API v2 (273 operations) in ~5,500 tokens of context",
+  "license": "Apache-2.0",
+  "author": "wdevcom",
+  "homepage": "https://github.com/wdevcom/laravel-forge-mcp#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/wdevcom/laravel-forge-mcp.git" },
+  "bugs": { "url": "https://github.com/wdevcom/laravel-forge-mcp/issues" },
+  "keywords": ["mcp", "model-context-protocol", "laravel", "forge", "laravel-forge", "claude", "deployment"],
+  "type": "module",
+  "bin": { "laravel-forge-mcp": "./dist/src/server.js" },
+  "files": ["dist", "spec"],
+  "engines": { "node": ">=18" },
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build && npm test",
+    "dev": "tsx src/server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "sync:spec": "tsx scripts/sync-spec.ts"
+  },
+  "dependencies": {
+    "@cfworker/json-schema": "^4.1.1",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "msw": "^2.15.0",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

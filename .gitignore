@@ -1,0 +1,29 @@
+# Zależności
+node_modules/
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Testy
+coverage/
+.vitest/
+
+# Środowisko - nigdy nie commitujemy tokenów
+.env
+.env.*
+!.env.example
+
+# Logi
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# System
+.DS_Store
+Thumbs.db
